@@ -90,7 +90,7 @@
                     //输入非法，告知重新输入
                     else
                     {
-                        Console.WriteLine("请重新输入：");
+                        Console.Write("输入无效，请重新输入，");
                     }
                 }
             }
