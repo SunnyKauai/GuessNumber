@@ -5,13 +5,6 @@
         //初始化每局成绩和历史最佳成绩变量
         public static int timeS = 0;
         public static int timeSh = 2147483647;
-        //生成1~100的随机整数
-        public static int RandomNumber()
-        {
-            Random rnd = new Random();
-            int num = rnd.Next(1, 101);
-            return num;
-        }
         //检查输入值是否符合1~100的整数，若不符合要求则要求重试，若符合要求则本次成绩加一，并返回输入值
         public static int CheckNumber()
         {
@@ -61,9 +54,10 @@
         }
         public static void Main()
         {
-            //初始化win用于判断是否进入继续游戏循环，初始化随机数i，初始化inwin用于判断是否退出游戏循环
+            //初始化win用于判断是否进入继续游戏循环，初始化随机数i，初始化inwin用于判断是否退出游戏循环，实例化Random类用于生成随机数
+            Random rnd = new Random();
             bool win = false;
-            int i = RandomNumber();
+            int i = rnd.Next(1, 101);
             string? inwin = "y";
             Console.WriteLine("游戏开始，请输入1~100之间的整数：");
             for (; inwin == "y";)//游戏循环
@@ -77,7 +71,7 @@
                     //若输入为y，则重新生成随机数i并恢复win为false退出继续游戏循环
                     if (inwin == "y")
                     {
-                        i = RandomNumber();
+                        i = rnd.Next(1, 101);
                         win = false;
                         timeS = 0;
                         Console.WriteLine("游戏开始，请输入1~100之间的整数：");
