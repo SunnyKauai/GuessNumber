@@ -3,7 +3,7 @@ namespace GuessNumber
 {
     class Program
     {
-        //声明成员变量并初始化部分成员变量
+        //声名成员变量并初始化部分成员变量
         int target;
         int score;int highScore = int.MaxValue;
         int min;int max;
@@ -90,7 +90,7 @@ namespace GuessNumber
             {
                 score++;
                 if (score < highScore) { highScore = score; }
-                Console.WriteLine("恭喜你，猜对了。您的本轮猜测次数为：{0} 您的历史最佳次数为：{1} ", score, highScore);
+                Console.WriteLine("恭喜你，猜对了。您的本轮猜测次数为：{0}。您的历史最佳次数为：{1}。", score, highScore);
                 return true;
             }
         }
@@ -99,13 +99,13 @@ namespace GuessNumber
         {
             string? input;
             bool exit = false;
-            bool success = false;
+            bool fail = true;
 
-            while (!success)
+            while (fail)
             {
                 Console.WriteLine("是否继续游戏(y/n)：");
                 input = Console.ReadLine();
-                success = CheckInputExit(input, out exit);
+                fail = CheckInputExit(input, out exit);
             }
             if (exit) { inGame = false; }
         }
@@ -115,18 +115,18 @@ namespace GuessNumber
             if (input == "y") 
             { 
                 exit = false; 
-                return true; 
+                return false; 
             }
             else if (input == "n") 
             { 
                 exit = true; 
-                return true; 
+                return false; 
             }
             else 
             { 
-                Console.Write("输入无效，请再输入一次，"); 
+                Console.Write("输入无效，请再输入一次,"); 
                 exit = false; 
-                return false; 
+                return true; 
             }
         }
     }
