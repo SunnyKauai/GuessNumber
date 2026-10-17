@@ -3,7 +3,7 @@ namespace GuessNumber
 {
     class Program
     {
-        //声明成员变量并初始化部分成员变量
+        //声明字段并初始化部分实例字段
         int target;
         int score; int highScore = int.MaxValue;
         int min; int max;
@@ -11,7 +11,7 @@ namespace GuessNumber
         //程序主方法
         static void Main()
         {
-            //实例化Random类用于生成随机数 实例化Program类用于使用实例方法及调用成员变量
+            //实例化Random类用于生成随机数 实例化Program类用于使用实例方法及调用实例字段
             Random random = new();
             Program program = new();
             //开场白
@@ -25,7 +25,7 @@ namespace GuessNumber
                 program.GameProcess();
             }
         }
-        //初始化部分成员变量
+        //初始化部分实例字段
         void Initialize(int input)
         {
             target = input;
